@@ -1,0 +1,293 @@
+/* RESET GENERALE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fcf6e8; /* Colore crema chiaro dello sfondo inferiore */
+}
+
+/* NAVBAR IN ALTO */
+.main-header {
+    width: 100%;
+    background-color: #fcf6e8; /* Colore crema chiaro di sfondo del menu */
+    border-bottom: 2px solid #e2d2b5; /* Sottile linea di stacco opzionale */
+    padding: 15px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spinge il logo a sinistra e il menu a destra */
+}
+
+/* GESTIONE LOGO */
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-height: 50px; /* Regola l'altezza massima in base alle proporzioni del tuo logo */
+    width: auto;
+}
+
+.logo-testo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #a31d1d; /* Rosso scuro teatrale */
+    font-weight: bold;
+}
+
+/* GESTIONE LINK DEL MENU */
+.navigation-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Spazio uniforme tra una voce e l'altra */
+}
+
+.navigation-menu a {
+    text-decoration: none;
+    color: #333333; /* Grigio scuro per massima leggibilità */
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+.navigation-menu a {
+    text-decoration: none;
+    color: #444444; 
+    
+    /* MODIFICA IL FONT E LA DIMENSIONE QUI */
+    font-family: 'Montserrat', sans-serif; /* Inserisci il nome esatto fornito da Google */
+    font-size: 1.0rem; /* Aumenta questo valore per ingrandire ancora le scritte (es. 1.3rem o 1.4rem) */
+    
+    font-weight: 700; 
+    letter-spacing: 2px; /* Aumenta lo spazio tra le lettere per dare più respiro */
+    padding-bottom: 8px; 
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+/* Effetto di hover e voce attiva (linea rossa sotto) */
+.navigation-menu a:hover, 
+.navigation-menu a.active {
+    color: #a31d1d;
+}
+
+.navigation-menu a.active::after,
+.navigation-menu a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #a31d1d; /* Linea rossa sotto la voce attiva come da immagine */
+}
+
+/* RESPONSIVE PER IL MENU (SMARTPHONE) */
+@media (max-width: 900px) {
+    .header-container {
+        flex-direction: column; /* Dispone logo e menu uno sotto l'altro sui telefoni */
+        gap: 15px;
+    }
+    
+    .navigation-menu ul {
+        flex-wrap: wrap; /* Permette alle voci del menu di andare a capo se lo schermo è piccolo */
+        justify-content: center;
+        gap: 15px;
+    }
+}
+.navigation-menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end; /* Allinea i link a destra, ma permette al blocco di espandersi verso il centro */
+    max-width: 70%; /* Impedisce al menu di avvicinarsi troppo al logo a sinistra */
+}
+
+
+/* CONTENITORE PRINCIPALE (SIPARIO) */
+.hero-section {
+    width: 100%;
+    min-height: 85vh; /* Copre gran parte della schermata */
+    /* Sostituisci 'sfondo-sipario.jpg' con la tua immagine del sipario rosso scuro */
+    background: #3d0c02 url('../immagini/sfondo-sipario.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* LAYOUT A DUE COLONNE (FLEXBOX) */
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Spazio tra colonna sinistra e destra */
+}
+
+/* STILE COLONNA SINISTRA (TESTI) */
+.hero-left {
+    flex: 1;
+    text-align: center;
+    color: #f3dfbf; /* Colore dorato/crema per i testi */
+    padding: 20px;
+}
+
+.decorazione-top, .decorazione-bottom {
+    font-size: 1.2rem;
+    color: #c99b53;
+    margin: 10px 0;
+}
+
+.titolo-grande {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.sottotitolo-corsivo {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    color: #f3dfbf;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+/* BOTTONE */
+.bottone-scopri {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid #c99b53;
+    color: #f3dfbf;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.bottone-scopri:hover {
+    background-color: #c99b53;
+    color: #3d0c02;
+}
+
+/* STILE COLONNA DESTRA (IMMAGINE) */
+.hero-right {
+    flex: 1.2; /* Leggermente più grande della colonna di testo */
+    display: flex;
+    justify-content: center;
+}
+
+.immagine-principale {
+    width: 100%;
+    max-width: 600px; /* Impedisce all'immagine di diventare troppo enorme */
+    height: auto;
+    border-radius: 8px; /* Smussa leggermente gli angoli se necessario */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Ombra per dare profondità */
+}
+
+/* RESPONSIVE PER SMARTPHONE E TABLET (Sotto i 900px di larghezza) */
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column; /* Inverte le colonne mettendole in verticale */
+        text-align: center;
+    }
+    
+    .hero-right {
+        width: 100%;
+    }
+    
+    .titolo-grande {
+        font-size: 2.5rem; /* Rimpicciolisce il testo sui dispositivi mobili */
+    }
+    
+    .sottotitolo-corsivo {
+        font-size: 1.8rem;
+    }
+}
+/* BANNER COOKIE */
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1e1e1e; /* Sfondo scuro per contrasto */
+    color: #fcf6e8; /* Testo chiaro color crema come il tuo sito */
+    padding: 15px 20px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+    z-index: 9999; /* Rimane sempre sopra ogni altro elemento del sito */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Classi di controllo per l'animazione dinamica */
+.cookie-banner-hidden {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cookie-banner-visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+.cookie-link {
+    color: #c99b53; /* Colore dorato coerente con il teatro */
+    text-decoration: underline;
+}
+
+.cookie-btn {
+    background-color: #c99b53;
+    color: #1e1e1e;
+    border: none;
+    padding: 8px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.cookie-btn:hover {
+    background-color: #e2d2b5;
+}
+
+/* RESPONSIVE PER SMARTPHONE */
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    .cookie-btn {
+        width: 100%;
+    }
+}
