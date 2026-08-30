@@ -629,3 +629,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
     object-fit: contain !important;
   }
 }
+.youtube-responsive {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.youtube-responsive iframe {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    border: 0;
+}
